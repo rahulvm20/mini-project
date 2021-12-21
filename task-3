@@ -1,0 +1,2 @@
+sudo docker run -it --rm --name ds -p 8888:8888 jupyter/datascience-notebook
+

@@ -1,0 +1,12 @@
+sudo docker container run -d --name=psgs -p 5432:5432 -e POSTGRES_PASSWORD=*password* -e PGDATA=/pgdata -v /pgdata:/pgdata postgres:11.4
+
+sudo psql -h localhost -p 5432 -U postgres
+
+create table heart (Age int,Sex varchar(5),ChestPainType varchar(5),RestingBP int,Cholesterol int,FastingBS int,RestingECG varchar(10),MaxHR int,ExerciseAngina varchar(5),Oldpeak varchar(10),ST_Slope
+
+varchar(10),HeartDisease int);
+
+\COPY heart(Age,Sex,ChestPainType,RestingBP,Cholesterol,FastingBS,RestingECG,MaxHR,ExerciseAngina,Oldpeak,ST_Slope,HeartDisease) FROM '/home/ubuntu/Downloads/heart.csv' CSV HEADER;
+
+(select * from heart -> shows the imported table from csv)
+
